@@ -1,0 +1,47 @@
+/*
+ * modify.c
+ *
+ *  Created on: Nov 12, 2022
+ *      Author: PC
+ */
+
+#include "modify.h"
+
+int tmp_timer=0;
+
+void modify_run(int led){
+	switch(led){
+	case RED:
+		tmp_timer=red_timer_global;
+		if(button2_flag==1){
+			button2_flag=0;
+			red_timer_global++;
+			if(red_timer_global>=100){
+				red_timer_global=0;
+			}
+		}
+		break;
+	case AMBER:
+		tmp_timer=amber_timer_global;
+		if(button2_flag==1){
+			button2_flag=0;
+			amber_timer_global++;
+			if(amber_timer_global>=100){
+				amber_timer_global=0;
+			}
+		}
+		break;
+	case GREEN:
+		tmp_timer=green_timer_global;
+		if(button2_flag==1){
+			button2_flag=0;
+			green_timer_global++;
+			if(green_timer_global>=100){
+				green_timer_global=0;
+			}
+		}
+		break;
+	default:
+			break;
+	}
+}

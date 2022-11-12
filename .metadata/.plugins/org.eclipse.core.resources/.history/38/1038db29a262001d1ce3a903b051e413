@@ -1,0 +1,53 @@
+/*
+ * selecting_mode.c
+ *
+ *  Created on: Nov 1, 2022
+ *      Author: PC
+ */
+
+#include "selecting_mode.h"
+
+void selecting_mode_run(){
+	switch(mode){
+		case INIT:
+			mode=MODE01;
+			break;
+		case MODE01:
+			trafic_light_run();
+			if(button1_flag==1){
+				button1_flag=0;
+				mode = MODE02;
+			}
+			break;
+		case MODE02:
+			mode2_run();
+			if(button1_flag==1){
+				button1_flag=0;
+				mode = MODE03;
+			}
+			break;
+		case MODE03:
+			mode3_run();
+			if(button1_flag==1){
+				button1_flag=0;
+				mode = MODE04;
+			}
+			break;
+		case MODE04:
+			mode4_run();
+			if(button1_flag==1){
+				button1_flag=0;
+				if(button3_flag==0){
+					green_timer_global=tmp_timer;
+				}else{
+					button3_flag=0;
+				}
+
+				mode = MODE01;
+			}
+			break;
+		default:
+
+			break;
+	}
+}

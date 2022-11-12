@@ -1,0 +1,5 @@
+seven_seg_led_display.c:10:6:seven_led_seg_display	16	static
+seven_seg_led_display.c:141:6:update7SEG	16	static
+seven_seg_led_display.c:185:6:update_buffer	16	static
+seven_seg_led_display.c:199:6:displaying_value	8	static
+seven_seg_led_display.c:262:6:display_for_mode	8	static
